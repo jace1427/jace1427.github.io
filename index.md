@@ -5,4 +5,6 @@
 layout: home
 ---
 
+# Hello!
+
 I am Justin Spidell, a software engineer based out of Seattle. Please enjoy my ramblings.
