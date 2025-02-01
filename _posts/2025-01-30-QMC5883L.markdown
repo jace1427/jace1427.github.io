@@ -8,6 +8,8 @@ categories: embedded
 Recently I've taken to embedded programming, and have been spending some of my free time playing around with a Pi Pico2W.
 I've fallen in love with the little thing, and have had so much fun reading leaning how it works.
 
+![A Pico2W](../_assets/PICO2W.webp "Pico2W")
+
 ## A misguided Attempt at Bare Metal
 
 As the Pico was being shipped to me, I read a particularly persuasive comment on Reddit - about how the Arduino isn't real programming and blah blah blah.
