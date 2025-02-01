@@ -6,6 +6,8 @@ permalink: /Portfolio/
 
 Below you'll find some information about my experience at Microsoft, and BizzWithBuzz. I've also included some bits about my favorite projects.
 
+# Work Experience
+
 ## Microsoft
 
 - **Data Oriented Development**: Enhanced telemetry using Azure Monitor, and through the development of Kusto logs and dashboards. Used new data to make priority decisions.
@@ -30,7 +32,9 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - **Collaboration and Problem-Solving**: Worked with team members to troubleshoot and improve website functionality.
 
-## QMC5883L
+# Projects
+
+## [QMC5883L](https://github.com/jace1427/qmc5883l)
 
 - Designed a custom library to interface with the QMC5883L Compass on Pico microcontrollers.
 
@@ -38,7 +42,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - Focused on creating a user-friendly API with comprehensive documentation for ease of use.
 
-## P2P
+## [P2P](https://github.com/jace1427/p2p)
 
 - Produced a peer-to-peer web based messaging system with Flask.
 
@@ -46,7 +50,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - Created local data storage with SQLite3.
 
-## Camera Calculator
+## [Camera Calculator](https://github.com/jace1427/CameraCalculator)
 
 - Designed and developed a web application using React and Python capable of parsing pictures of handwritten equations, and returning a solution.
 
@@ -54,7 +58,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - Developed a Lexical parser in Python to parse input provided by the neural network.
 
-## Fast Fourier Transforms
+## [Fast Fourier Transforms](https://github.com/jace1427/Fast_Fourier_Transforms)
 
 - Developed a library containing multi-threaded discrete Fourier Transforms functions in C++.
 
@@ -62,7 +66,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - Designed a testing suite to compare Fourier Transform algorithms, and find the best approach to multi-threading them.
 
-## SnakeAI
+## [SnakeAI](https://github.com/jace1427/SnakeAI)
 
 - Built a generational neural network from scratch in Python to play the classic game Snake autonomously.
 
