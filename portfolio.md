@@ -6,9 +6,9 @@ permalink: /Portfolio/
 
 Below you'll find some information about my experience at Microsoft, and BizzWithBuzz. I've also included some bits about my favorite projects.
 
-# Work Experience
+## Work Experience
 
-## Microsoft
+### Microsoft
 
 - **Data Oriented Development**: Enhanced telemetry using Azure Monitor, and through the development of Kusto logs and dashboards. Used new data to make priority decisions.
 
@@ -24,7 +24,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - **Feature Design and Implementation**: Spearheaded the design of multiple user facing features in C#. Collaborated with other teams to ensure alignment with user needs and timely delivery.
 
-## BizzWithBuzz
+### BizzWithBuzz
 
 - **User Interface Design**: Created user friendly and visually appealing UI's for customers.
 
@@ -32,7 +32,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - **Collaboration and Problem-Solving**: Worked with team members to troubleshoot and improve website functionality.
 
-# Projects
+## Projects
 
 ### [QMC5883L](https://github.com/jace1427/qmc5883l)
 
