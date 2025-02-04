@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="justinspidell.com/feed.xml" rel="self" type="application/atom+xml" /><link href="justinspidell.com/" rel="alternate" type="text/html" /><updated>2025-02-03T17:04:38-08:00</updated><id>justinspidell.com/feed.xml</id><title type="html">Justin Spidell</title><subtitle></subtitle><entry><title type="html">Pico Adventures, Part 1</title><link href="justinspidell.com/embedded/pico/2025/01/30/PICO-1.html" rel="alternate" type="text/html" title="Pico Adventures, Part 1" /><published>2025-01-30T14:22:30-08:00</published><updated>2025-01-30T14:22:30-08:00</updated><id>justinspidell.com/embedded/pico/2025/01/30/PICO-1</id><content type="html" xml:base="justinspidell.com/embedded/pico/2025/01/30/PICO-1.html"><![CDATA[<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="c">#/bin/bash</span>
+<span class="nb">mkdir </span>asdfasdf
+</code></pre></div></div>
+
+<p>Recently I’ve taken to embedded programming, and have been spending some of my free time playing around with a Pi Pico2W.
+I’ve fallen in love with the little thing, and have had so much fun leaning how it works.
+Below is the story of my attempt at a bare metal blink (spoilers: I was unsuccessful).</p>
+
+<p><img src="/assets/images/PICO2W.webp" alt="A Pico2W" title="Pico2W" /></p>
+
+<hr />
+
+<h1 id="a-misguided-attempt-at-bare-metal">A misguided Attempt at Bare Metal</h1>
+
+<p>As the Pico was being shipped to me, I read a particularly persuasive comment on Reddit - about how the Arduino isn’t real programming and blah blah blah.
+I became a little self conscious, and decided that I should instead only work with bare metal.
+Oh boy. What a mistake :D</p>
+
+<h2 id="blink-the-led">Blink the LED</h2>
+
+<p>As is custom, my first project was to blink the onboard LED.
+I thought my best approach would be to reverse engineer the pico-sdk, so I spent a good week trying to understand how the pico-sdk initializes and writes a bit to a GPIO pin.</p>
+
+<blockquote>
+  <p>You can see my notes <a href="https://github.com/jace1427/blink">here</a>.</p>
+</blockquote>
+
+<h2 id="new-age-embedded">New Age Embedded</h2>
+
+<p>ChatGPT was incredibly helpful here.
+My C skills were a little rusty, so being able to ask it to explain any macro I didn’t understand was incredible!
+Of course, it still hallucinated some, but it was close enough for me to fill in the gaps.
+After figuring out that the sdk was calling some assembly for most cases, I studied the ARM lanugage manual and felt I had a good enough grasp to attempt a bare metal blink.</p>
+
+<p>I wrote some code, and asked ChatGPT what it thought.
+It decided that my code would work, because I needed a CMake file, and memory map!
+After some time I had come to understand both of these things, making more great use of the examples in the pico-sdk.
+But even with all these things successfully compiling, it would not work!</p>
+
+<h2 id="mistakes-were-made">Mistakes Were Made</h2>
+
+<p>I realized that I had spent the whole time barking up the wrong tree.
+The onboard LED on the Pico 2W is controlled by the Wi-Fi chip!
+All the research I had done, all the new knowledge, all for naught.
+A huge blow to my ego, but I had learned so much at this point, so it wasn’t a total loss.
+I decided to take my knowledge, cut my losses and use the pico-sdk to interface with a magnetometer I had bought, the QMC5883L.</p>]]></content><author><name></name></author><category term="embedded" /><category term="pico" /><summary type="html"><![CDATA[!#/bin/bash mkdir asdfasdf]]></summary></entry></feed>

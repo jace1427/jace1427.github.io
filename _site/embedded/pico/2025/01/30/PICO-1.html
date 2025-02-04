@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Pico Adventures, Part 1 | Justin Spidell</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Pico Adventures, Part 1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="!#/bin/bash mkdir asdfasdf" />
+<meta property="og:description" content="!#/bin/bash mkdir asdfasdf" />
+<link rel="canonical" href="justinspidell.com/embedded/pico/2025/01/30/PICO-1.html" />
+<meta property="og:url" content="justinspidell.com/embedded/pico/2025/01/30/PICO-1.html" />
+<meta property="og:site_name" content="Justin Spidell" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-30T14:22:30-08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Pico Adventures, Part 1" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-30T14:22:30-08:00","datePublished":"2025-01-30T14:22:30-08:00","description":"!#/bin/bash mkdir asdfasdf","headline":"Pico Adventures, Part 1","mainEntityOfPage":{"@type":"WebPage","@id":"justinspidell.com/embedded/pico/2025/01/30/PICO-1.html"},"url":"justinspidell.com/embedded/pico/2025/01/30/PICO-1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="justinspidell.com/feed.xml" title="Justin Spidell" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Justin Spidell</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/Portfolio/">Portfolio</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">
+      Pico Adventures, Part 1
+    </h1>
+    <p class="post-meta">
+      <time
+        class="dt-published"
+        datetime="2025-01-30T14:22:30-08:00"
+        itemprop="datePublished"
+      >Jan 30, 2025
+      </time></p>
+  </header>
+  <div class="toc-content-wrapper">
+    <div class="toc"><ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#a-misguided-attempt-at-bare-metal">A misguided Attempt at Bare Metal</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#blink-the-led">Blink the LED</a></li>
+<li class="toc-entry toc-h2"><a href="#new-age-embedded">New Age Embedded</a></li>
+<li class="toc-entry toc-h2"><a href="#mistakes-were-made">Mistakes Were Made</a></li>
+</ul>
+</li>
+</ul></div>
+    <div class="post-content e-content" itemprop="articleBody">
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="c">#/bin/bash</span>
+<span class="nb">mkdir </span>asdfasdf
+</code></pre></div></div>
+
+<p>Recently I’ve taken to embedded programming, and have been spending some of my free time playing around with a Pi Pico2W.
+I’ve fallen in love with the little thing, and have had so much fun leaning how it works.
+Below is the story of my attempt at a bare metal blink (spoilers: I was unsuccessful).</p>
+
+<p><img src="/assets/images/PICO2W.webp" alt="A Pico2W" title="Pico2W" /></p>
+
+<hr />
+
+<h1 id="a-misguided-attempt-at-bare-metal">A misguided Attempt at Bare Metal</h1>
+
+<p>As the Pico was being shipped to me, I read a particularly persuasive comment on Reddit - about how the Arduino isn’t real programming and blah blah blah.
+I became a little self conscious, and decided that I should instead only work with bare metal.
+Oh boy. What a mistake :D</p>
+
+<h2 id="blink-the-led">Blink the LED</h2>
+
+<p>As is custom, my first project was to blink the onboard LED.
+I thought my best approach would be to reverse engineer the pico-sdk, so I spent a good week trying to understand how the pico-sdk initializes and writes a bit to a GPIO pin.</p>
+
+<blockquote>
+  <p>You can see my notes <a href="https://github.com/jace1427/blink">here</a>.</p>
+</blockquote>
+
+<h2 id="new-age-embedded">New Age Embedded</h2>
+
+<p>ChatGPT was incredibly helpful here.
+My C skills were a little rusty, so being able to ask it to explain any macro I didn’t understand was incredible!
+Of course, it still hallucinated some, but it was close enough for me to fill in the gaps.
+After figuring out that the sdk was calling some assembly for most cases, I studied the ARM lanugage manual and felt I had a good enough grasp to attempt a bare metal blink.</p>
+
+<p>I wrote some code, and asked ChatGPT what it thought.
+It decided that my code would work, because I needed a CMake file, and memory map!
+After some time I had come to understand both of these things, making more great use of the examples in the pico-sdk.
+But even with all these things successfully compiling, it would not work!</p>
+
+<h2 id="mistakes-were-made">Mistakes Were Made</h2>
+
+<p>I realized that I had spent the whole time barking up the wrong tree.
+The onboard LED on the Pico 2W is controlled by the Wi-Fi chip!
+All the research I had done, all the new knowledge, all for naught.
+A huge blow to my ego, but I had learned so much at this point, so it wasn’t a total loss.
+I decided to take my knowledge, cut my losses and use the pico-sdk to interface with a magnetometer I had bought, the QMC5883L.</p>
+
+    </div>
+  </div><a class="u-url" href="/embedded/pico/2025/01/30/PICO-1.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list"><li><a class="u-email" href="mailto:justintspidell@gmail.com">justintspidell@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jace1427"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jace1427</span></a></li><li><a href="https://www.linkedin.com/in/justinspidell1427"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">justinspidell1427</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Excellence in all things</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
