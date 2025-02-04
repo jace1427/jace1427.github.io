@@ -1,46 +1,64 @@
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
   margin: 0;
   padding: 0;
 }
-
-
 
 /**
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+    $base-font-family;
+  color: $foreground;
+  background: $background;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm {
   margin-bottom: $spacing-unit * 0.5;
 }
-
-
 
 /**
  * `main` element
@@ -49,17 +67,16 @@ main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
-
-
 /**
  * Images
  */
 img {
   max-width: 100%;
-  vertical-align: middle;
+  padding: inherit;
+  margin: auto;
+  width: 350px;
+  display: block;
 }
-
-
 
 /**
  * Figures
@@ -72,12 +89,11 @@ figcaption {
   font-size: $small-font-size;
 }
 
-
-
 /**
  * Lists
  */
-ul, ol {
+ul,
+ol {
   margin-left: $spacing-unit;
 }
 
@@ -88,30 +104,43 @@ li {
   }
 }
 
-
-
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: $base-font-weight;
 }
 
+h1 {
+  font-size: 2em;
+}
 
+h2 {
+  font-size: 100em;
+}
+
+h2 {
+  font-size: 100em;
+}
 
 /**
  * Links
  */
 a {
-  color: $brand-color;
+  color: $palette4;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $palette5;
   }
 
   &:hover {
-    color: $text-color;
+    color: $foreground;
     text-decoration: underline;
   }
 
@@ -124,13 +153,13 @@ a {
   }
 }
 
-
 /**
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $selection-foreground;
+  background: $selection-background;
+  border-left: 4px solid $palette15;
   padding-left: $spacing-unit * 0.5;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -141,17 +170,14 @@ blockquote {
   }
 }
 
-
-
 /**
  * Code formatting
  */
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 2px solid $palette4;
   border-radius: 3px;
-  background-color: #eef;
 }
 
 code {
@@ -169,14 +195,12 @@ pre {
   }
 }
 
-
-
 /**
  * Wrapper
  */
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit;
@@ -185,13 +209,11 @@ pre {
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit * 0.5;
     padding-left: $spacing-unit * 0.5;
   }
 }
-
-
 
 /**
  * Clearfix
@@ -202,19 +224,17 @@ pre {
   clear: both;
 }
 
-
-
 /**
  * Icons
  */
 
 .svg-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    fill: #{$grey-color};
-    padding-right: 5px;
-    vertical-align: text-top;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #{$palette4};
+  padding-right: 5px;
+  vertical-align: text-top;
 }
 
 .social-media-list {
@@ -223,8 +243,6 @@ pre {
   }
 }
 
-
-
 /**
  * Tables
  */
@@ -232,23 +250,24 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  color: lighten($foreground, 18%);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
+  border: 1px solid $palette15;
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background: lighten($palette15, 6%);
     }
   }
-  th, td {
+  th,
+  td {
     padding: ($spacing-unit * 0.3333333333) ($spacing-unit * 0.5);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background: lighten($palette15, 3%);
+    border: 1px solid darken($palette15, 4%);
+    border-bottom-color: darken($palette15, 12%);
   }
   td {
-    border: 1px solid $grey-color-light;
+    border: 1px solid $palette15;
   }
 }

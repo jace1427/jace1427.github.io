@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Pico Adventures, Part 2"
+date: 2025-02-02 16:23:30 -0800
+categories: embedded pico
+toc: true
+---
+
+So I did not succeed in my bare metal blinking attempt.
+I picked myself up and decided to try and interface with a magnometer I had bought, the QMC5883L.
+
+![The QMC5883L](/assets/images/qmc5883l.avif "The QMC5883L")
+
+---
+
+# Real Embedded Type Sh\*t

@@ -2,11 +2,12 @@
 layout: page
 title: Portfolio
 permalink: /Portfolio/
+toc: true
 ---
 
 Below you'll find some information about my experience at Microsoft, and BizzWithBuzz. I've also included some bits about my favorite projects.
 
-## Work Experience
+# Work Experience
 
 ### Microsoft
 
@@ -32,7 +33,7 @@ Below you'll find some information about my experience at Microsoft, and BizzWit
 
 - **Collaboration and Problem-Solving**: Worked with team members to troubleshoot and improve website functionality.
 
-## Projects
+# Projects
 
 ### [QMC5883L](https://github.com/jace1427/qmc5883l)
 

@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Using NixOS as a Daily Driver"
+date: 2025-02-02 16:23:30 -0800
+categories: linux nix
+toc: true
+---
+
+After I quit my job at Microsoft, I decided that it was time to move on from the buggy mess known as Windows.
+I had just seen [this incredible video](https://www.youtube.com/watch?v=CwfKlX3rA6E) from _No Boilerplate_, and loved the idea of a declarative Linux.
+
+---
+
+# A Linux Story </3
+
+My fear of Linux had stemmed from my time in university, trying to get WSL working.
+We were told that we needed to use an Unbuntu VM in order to code in C (I'll leave that debate as an exercise to the reader).
+So when _No Boilerplate_ said I could have my cake and eat it too, I was sold.
+The idea of built in roll backs, the best of bleeding edge and stability, and a large community seemed incredible!
+But the truth is, NixOS is flawed, I'd argue it's fundamentally flawed.
+
+## The Good, the Bad, the NixOS
+
+NixOS, and it's scripting language, nix, are excellent concepts, but after years of community re-organization, nix as a language is confused and unintuitive.
+I know what you're thinking (`~skill issue~`)

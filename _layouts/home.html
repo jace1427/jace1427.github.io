@@ -5,7 +5,13 @@ layout: default
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+  {%- endif -%}
+  <div class="home-pictures">
+    <img src="/assets/images/eng_funny_papers.jpg" alt="" />
+    <img src="/assets/images/eng_head_kiss.jpg" alt="" />
+    <img src="/assets/images/eng_arm_hug.jpg" alt="" />
+  </div>
+  {{ content }} {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}

@@ -2,8 +2,14 @@
 layout: post
 title: "Pico Adventures, Part 1"
 date: 2025-01-30 14:22:30 -0800
-categories: embedded
+categories: embedded pico
+toc: true
 ---
+
+```bash
+!#/bin/bash
+mkdir asdfasdf
+```
 
 Recently I've taken to embedded programming, and have been spending some of my free time playing around with a Pi Pico2W.
 I've fallen in love with the little thing, and have had so much fun leaning how it works.
@@ -13,16 +19,20 @@ Below is the story of my attempt at a bare metal blink (spoilers: I was unsucces
 
 ---
 
-## A misguided Attempt at Bare Metal
+# A misguided Attempt at Bare Metal
 
 As the Pico was being shipped to me, I read a particularly persuasive comment on Reddit - about how the Arduino isn't real programming and blah blah blah.
 I became a little self conscious, and decided that I should instead only work with bare metal.
 Oh boy. What a mistake :D
 
+## Blink the LED
+
 As is custom, my first project was to blink the onboard LED.
 I thought my best approach would be to reverse engineer the pico-sdk, so I spent a good week trying to understand how the pico-sdk initializes and writes a bit to a GPIO pin.
 
 > You can see my notes [here](https://github.com/jace1427/blink).
+
+## New Age Embedded
 
 ChatGPT was incredibly helpful here.
 My C skills were a little rusty, so being able to ask it to explain any macro I didn't understand was incredible!
@@ -34,8 +44,10 @@ It decided that my code would work, because I needed a CMake file, and memory ma
 After some time I had come to understand both of these things, making more great use of the examples in the pico-sdk.
 But even with all these things successfully compiling, it would not work!
 
+## Mistakes Were Made
+
 I realized that I had spent the whole time barking up the wrong tree.
 The onboard LED on the Pico 2W is controlled by the Wi-Fi chip!
-Meaning everything I had learned was not applicable at all.
+All the research I had done, all the new knowledge, all for naught.
 A huge blow to my ego, but I had learned so much at this point, so it wasn't a total loss.
 I decided to take my knowledge, cut my losses and use the pico-sdk to interface with a magnetometer I had bought, the QMC5883L.
